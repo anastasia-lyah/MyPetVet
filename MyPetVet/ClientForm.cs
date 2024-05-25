@@ -20,7 +20,7 @@ namespace MyPetVet
         }
         public void Display()
         {
-            DB.DisplayAndSearchClient("SELECT id_client, lastname, firstname, address, phone FROM client", dgvClients);
+            DB.DisplayAndSearchClient("SELECT id_client, fullname, address, phone FROM client", dgvClients);
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -29,7 +29,9 @@ namespace MyPetVet
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            MenuForm menuForm = new MenuForm();
+            menuForm.ShowDialog();
         }
 
         private void btnNewClient_Click(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace MyPetVet
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            DB.DisplayAndSearchClient("SELECT id_client, lastname, firstname, address, phone FROM client WHERE lastname LIKE '%"+ txtSearch.Text +"%'", dgvClients);
+            DB.DisplayAndSearchClient("SELECT id_client, fullname, address, phone FROM client WHERE fullname LIKE '%"+ txtSearch.Text +"%'", dgvClients);
         }
 
         private void dgvClients_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -60,10 +62,9 @@ namespace MyPetVet
             {
                 form.Clear();
                 form.id = dgvClients.Rows[e.RowIndex].Cells[2].Value.ToString();
-                form.lastname = dgvClients.Rows[e.RowIndex].Cells[3].Value.ToString();
-                form.firstname = dgvClients.Rows[e.RowIndex].Cells[4].Value.ToString();
-                form.address = dgvClients.Rows[e.RowIndex].Cells[5].Value.ToString();
-                form.phone = dgvClients.Rows[e.RowIndex].Cells[6].Value.ToString();
+                form.fullname = dgvClients.Rows[e.RowIndex].Cells[3].Value.ToString();
+                form.address = dgvClients.Rows[e.RowIndex].Cells[4].Value.ToString();
+                form.phone = dgvClients.Rows[e.RowIndex].Cells[5].Value.ToString();
                 form.UpdateInfo();
                 form.ShowDialog();
                 return;

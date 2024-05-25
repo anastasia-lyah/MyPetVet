@@ -13,7 +13,7 @@ namespace MyPetVet
     public partial class NewClientForm : Form
     {
         private readonly ClientForm _parent;
-        public string id, lastname, firstname, address, phone;
+        public string id, fullname, address, phone;
         public NewClientForm(ClientForm parent)
         {
             InitializeComponent();
@@ -23,8 +23,7 @@ namespace MyPetVet
         {
             lblText.Text = "Редагувати дані про клієнта";
             btnSave.Text = "Оновити";
-            txtLastName.Text = lastname;
-            txtFirstName.Text = firstname;
+            txtFullName.Text = fullname;
             txtAddress.Text = address;
             txtPhone.Text = phone;
         }
@@ -36,19 +35,14 @@ namespace MyPetVet
         }
         public void Clear()
         {
-            txtLastName.Text = txtFirstName.Text = txtAddress.Text = txtPhone.Text = string.Empty;
+            txtFullName.Text  = txtAddress.Text = txtPhone.Text = string.Empty;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtLastName.Text.Trim().Length == 0) 
+            if (txtFullName.Text.Trim().Length == 0) 
             {
-                MessageBox.Show("Введіть прізвище клієнта.");
-                return;
-            }
-            if (txtFirstName.Text.Trim().Length == 0)
-            {
-                MessageBox.Show("Введіть ім'я клієнта.");
+                MessageBox.Show("Введіть прізвище та ім'я клієнта.");
                 return;
             }
             if (txtAddress.Text.Trim().Length == 0)
@@ -63,13 +57,13 @@ namespace MyPetVet
             }
             if(btnSave.Text == "Зберегти")
             {
-                Client clnt = new Client(txtLastName.Text.Trim(), txtFirstName.Text.Trim(), txtAddress.Text.Trim(), txtPhone.Text.Trim());
+                Client clnt = new Client(txtFullName.Text.Trim(), txtAddress.Text.Trim(), txtPhone.Text.Trim());
                 DB.AddClient(clnt);
                 Clear();
             }
             if (btnSave.Text == "Оновити")
             {
-                Client clnt = new Client(txtLastName.Text.Trim(), txtFirstName.Text.Trim(), txtAddress.Text.Trim(), txtPhone.Text.Trim());
+                Client clnt = new Client(txtFullName.Text.Trim(), txtAddress.Text.Trim(), txtPhone.Text.Trim());
                 DB.UpdateClient(clnt, id);
             }
             _parent.Display();

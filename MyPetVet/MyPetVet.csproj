@@ -98,6 +98,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="AnimalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimalForm.Designer.cs">
+      <DependentUpon>AnimalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BreedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BreedForm.Designer.cs">
+      <DependentUpon>BreedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="ClientForm.cs">
       <SubType>Form</SubType>
@@ -113,6 +126,18 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAnimalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAnimalForm.Designer.cs">
+      <DependentUpon>NewAnimalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,33 +146,54 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegistrForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistrForm.Designer.cs">
       <DependentUpon>RegistrForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SpeciesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeciesForm.Designer.cs">
+      <DependentUpon>SpeciesForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AnimalForm.resx">
+      <DependentUpon>AnimalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BreedForm.resx">
+      <DependentUpon>BreedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAnimalForm.resx">
+      <DependentUpon>NewAnimalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewClientForm.resx">
       <DependentUpon>NewClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="RegistrForm.resx">
       <DependentUpon>RegistrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeciesForm.resx">
+      <DependentUpon>SpeciesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -167,10 +213,16 @@
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1675108652_top-fon-com-p-kartinki-dlya-prezentatsii-zhivotnikh-bez-45-removebg-preview.png" />
+    <None Include="Resources\search1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pngegg.png" />
+    <None Include="Resources\search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1675108652_top-fon-com-p-kartinki-dlya-prezentatsii-zhivotnikh-bez-45.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

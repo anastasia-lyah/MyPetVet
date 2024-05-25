@@ -8,15 +8,13 @@ namespace MyPetVet
 {
     class Client
     {
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
+        public string FullName { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
 
-        public Client(string lastName, string firstName, string address, string phone)
+        public Client(string fullName, string address, string phone)
         {
-            LastName = lastName;
-            FirstName = firstName;
+            FullName = fullName;
             Address = address;
             Phone = phone;
         }

@@ -63,20 +63,9 @@ namespace MyPetVet.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1675108652_top_fon_com_p_kartinki_dlya_prezentatsii_zhivotnikh_bez_45_removebg_preview {
+        internal static System.Drawing.Bitmap _1675108652_top_fon_com_p_kartinki_dlya_prezentatsii_zhivotnikh_bez_45 {
             get {
-                object obj = ResourceManager.GetObject("1675108652_top-fon-com-p-kartinki-dlya-prezentatsii-zhivotnikh-bez-45-removebg-pr" +
-                        "eview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pngegg {
-            get {
-                object obj = ResourceManager.GetObject("pngegg", resourceCulture);
+                object obj = ResourceManager.GetObject("1675108652_top-fon-com-p-kartinki-dlya-prezentatsii-zhivotnikh-bez-45", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -87,6 +76,36 @@ namespace MyPetVet.Properties {
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search1 {
+            get {
+                object obj = ResourceManager.GetObject("search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search2 {
+            get {
+                object obj = ResourceManager.GetObject("search2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search3 {
+            get {
+                object obj = ResourceManager.GetObject("search3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

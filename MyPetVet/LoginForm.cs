@@ -61,9 +61,16 @@ namespace MyPetVet
             adapret.Fill(table);
 
             if (table.Rows.Count > 0)
-                MessageBox.Show("Ви ввійшли в систему.");
+            {
+                this.Hide();
+                MenuForm menuForm = new MenuForm();
+                menuForm.Show();
+            }              
+            
             else
                 MessageBox.Show("Неправильний логін або пароль. Спробуйте знову.");
+
+            
         }
 
         private void lblRegistr_Click(object sender, EventArgs e)

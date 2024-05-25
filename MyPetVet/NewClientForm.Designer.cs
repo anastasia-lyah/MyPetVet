@@ -35,11 +35,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,15 +74,13 @@
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.txtPhone);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtFirstName);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtAddress);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtLastName);
+            this.panel2.Controls.Add(this.txtFullName);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(26, 128);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(441, 429);
+            this.panel2.Size = new System.Drawing.Size(441, 341);
             this.panel2.TabIndex = 1;
             // 
             // btnSave
@@ -97,7 +93,7 @@
             this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(156)))), ((int)(((byte)(7)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Onest", 10F);
-            this.btnSave.Location = new System.Drawing.Point(131, 351);
+            this.btnSave.Location = new System.Drawing.Point(126, 276);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.MaximumSize = new System.Drawing.Size(252, 47);
             this.btnSave.Name = "btnSave";
@@ -109,8 +105,9 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtPhone.Location = new System.Drawing.Point(66, 290);
+            this.txtPhone.Location = new System.Drawing.Point(61, 215);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(296, 29);
             this.txtPhone.TabIndex = 7;
@@ -119,34 +116,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(66, 260);
+            this.label5.Location = new System.Drawing.Point(61, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(154, 27);
             this.label5.TabIndex = 6;
             this.label5.Text = "Номер телефону:";
             // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtFirstName.Location = new System.Drawing.Point(66, 136);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(296, 29);
-            this.txtFirstName.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(66, 106);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 27);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Ім\'я:";
-            // 
             // txtAddress
             // 
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtAddress.Location = new System.Drawing.Point(66, 213);
+            this.txtAddress.Location = new System.Drawing.Point(61, 138);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(296, 29);
             this.txtAddress.TabIndex = 3;
@@ -155,19 +135,20 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(66, 183);
+            this.label3.Location = new System.Drawing.Point(61, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 27);
             this.label3.TabIndex = 2;
             this.label3.Text = "Адреса:";
             // 
-            // txtLastName
+            // txtFullName
             // 
-            this.txtLastName.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtLastName.Location = new System.Drawing.Point(66, 61);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(296, 29);
-            this.txtLastName.TabIndex = 1;
+            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFullName.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtFullName.Location = new System.Drawing.Point(66, 61);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(296, 29);
+            this.txtFullName.TabIndex = 1;
             // 
             // label2
             // 
@@ -175,22 +156,22 @@
             this.label2.Font = new System.Drawing.Font("Onest", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(66, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 27);
+            this.label2.Size = new System.Drawing.Size(150, 27);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Прізвище:";
+            this.label2.Text = "Прізвище та ім\'я:";
             // 
             // NewClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 581);
+            this.ClientSize = new System.Drawing.Size(493, 493);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Додати клієнта";
+            this.Text = "MyPetVet";
             this.Load += new System.EventHandler(this.NewClientForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -204,12 +185,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblText;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSave;
