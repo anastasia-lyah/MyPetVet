@@ -27,7 +27,6 @@ namespace MyPetVet
             txtAddress.Text = address;
             txtPhone.Text = phone;
         }
-
         public void SaveInfo()
         {
             lblText.Text = "Додати клієнта";
@@ -37,7 +36,6 @@ namespace MyPetVet
         {
             txtFullName.Text  = txtAddress.Text = txtPhone.Text = string.Empty;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtFullName.Text.Trim().Length == 0) 
@@ -68,7 +66,6 @@ namespace MyPetVet
             }
             _parent.Display();
         }
-
         private void NewClientForm_Load(object sender, EventArgs e)
         {
 

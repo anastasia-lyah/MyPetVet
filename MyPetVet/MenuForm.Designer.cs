@@ -45,7 +45,7 @@
             this.btnClients.Font = new System.Drawing.Font("Onest", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClients.Location = new System.Drawing.Point(12, 12);
             this.btnClients.Name = "btnClients";
-            this.btnClients.Size = new System.Drawing.Size(220, 220);
+            this.btnClients.Size = new System.Drawing.Size(446, 84);
             this.btnClients.TabIndex = 0;
             this.btnClients.Text = "Клієнти";
             this.btnClients.UseVisualStyleBackColor = false;
@@ -59,9 +59,9 @@
             this.btnAnimal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(156)))), ((int)(((byte)(7)))));
             this.btnAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnimal.Font = new System.Drawing.Font("Onest", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnAnimal.Location = new System.Drawing.Point(238, 12);
+            this.btnAnimal.Location = new System.Drawing.Point(12, 102);
             this.btnAnimal.Name = "btnAnimal";
-            this.btnAnimal.Size = new System.Drawing.Size(220, 220);
+            this.btnAnimal.Size = new System.Drawing.Size(446, 84);
             this.btnAnimal.TabIndex = 1;
             this.btnAnimal.Text = "Тварини";
             this.btnAnimal.UseVisualStyleBackColor = false;
@@ -75,12 +75,13 @@
             this.btnLog.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(156)))), ((int)(((byte)(7)))));
             this.btnLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLog.Font = new System.Drawing.Font("Onest", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnLog.Location = new System.Drawing.Point(12, 238);
+            this.btnLog.Location = new System.Drawing.Point(12, 192);
             this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(220, 220);
+            this.btnLog.Size = new System.Drawing.Size(446, 84);
             this.btnLog.TabIndex = 2;
             this.btnLog.Text = "Журнал відвідувань";
             this.btnLog.UseVisualStyleBackColor = false;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // btnMed
             // 
@@ -90,18 +91,19 @@
             this.btnMed.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(156)))), ((int)(((byte)(7)))));
             this.btnMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMed.Font = new System.Drawing.Font("Onest", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnMed.Location = new System.Drawing.Point(238, 238);
+            this.btnMed.Location = new System.Drawing.Point(12, 282);
             this.btnMed.Name = "btnMed";
-            this.btnMed.Size = new System.Drawing.Size(220, 220);
+            this.btnMed.Size = new System.Drawing.Size(446, 84);
             this.btnMed.TabIndex = 3;
             this.btnMed.Text = "Медичні записи";
             this.btnMed.UseVisualStyleBackColor = false;
+            this.btnMed.Click += new System.EventHandler(this.btnMed_Click);
             // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 466);
+            this.ClientSize = new System.Drawing.Size(470, 382);
             this.Controls.Add(this.btnMed);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnAnimal);

@@ -17,12 +17,10 @@ namespace MyPetVet
         {
             InitializeComponent();
         }
-
         private void SpeciesForm_Load(object sender, EventArgs e)
         {
 
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtSpeciesName.Text.Trim().Length == 0)
@@ -39,7 +37,6 @@ namespace MyPetVet
             db.closeConnection();
 
             this.Close();
-        }
-    
+        }    
     }
 }

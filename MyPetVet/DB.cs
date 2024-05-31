@@ -27,14 +27,14 @@ namespace MyPetVet
         {
             return conn;
         }
-
         public static void AddClient(Client clnt)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `vet_db`.`client` (`fullname`, `address`, `phone`) VALUES (@FullName, @Address, @Phone)", db.getConnection());
-            command.Parameters.Add("@FullName", MySqlDbType.VarChar).Value = clnt.FullName;
-            command.Parameters.Add("@Address", MySqlDbType.VarChar).Value = clnt.Address;
-            command.Parameters.Add("@Phone", MySqlDbType.VarChar).Value = clnt.Phone;
+            MySqlCommand command = new MySqlCommand("AddClient", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@FullName", clnt.FullName);
+            command.Parameters.AddWithValue("@Address", clnt.Address);
+            command.Parameters.AddWithValue("@Phone", clnt.Phone);
 
             db.openConnection();
 
@@ -48,11 +48,12 @@ namespace MyPetVet
         public static void UpdateClient(Client clnt, string id)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("UPDATE `vet_db`.`client` SET fullname = @FullName, address = @Address, phone = @Phone WHERE id_client = @ID", db.getConnection());
-            command.Parameters.Add("@FullName", MySqlDbType.VarChar).Value = clnt.FullName;
-            command.Parameters.Add("@Address", MySqlDbType.VarChar).Value = clnt.Address;
-            command.Parameters.Add("@Phone", MySqlDbType.VarChar).Value = clnt.Phone;
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = id;
+            MySqlCommand command = new MySqlCommand("UpdateClient", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@ID", id);
+            command.Parameters.AddWithValue("@FullName", clnt.FullName);
+            command.Parameters.AddWithValue("@Address", clnt.Address);
+            command.Parameters.AddWithValue("@Phone", clnt.Phone);
 
             db.openConnection();
 
@@ -63,12 +64,12 @@ namespace MyPetVet
 
             db.closeConnection();
         }
-
         public static void DeleteClient(string id)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("DELETE FROM `vet_db`.`client` WHERE id_client = @ID", db.getConnection());
-            command.Parameters.Add("@ID", MySqlDbType.VarChar).Value = id;
+            MySqlCommand command = new MySqlCommand("DeleteClient", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@ID", id);
 
             db.openConnection();
 
@@ -89,22 +90,17 @@ namespace MyPetVet
             adp.Fill(table);
             dgv.DataSource = table;
             db.closeConnection();
-
         }
-
-
-
         public static void AddAnimal(Animal animal)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand(@"INSERT INTO `vet_db`.`animal` 
-                                               (`id_client`, `id_species`, `id_breed`, `name`, `date_birth`) 
-                                               VALUES (@IdClient, @IdSpecies, @IdBreed, @Name, @DateBirth)", db.getConnection());
-            command.Parameters.Add("@IdClient", MySqlDbType.Int32).Value = animal.IdClient;
-            command.Parameters.Add("@IdSpecies", MySqlDbType.Int32).Value = animal.IdSpecies;
-            command.Parameters.Add("@IdBreed", MySqlDbType.Int32).Value = animal.IdBreed;
-            command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = animal.Name;
-            command.Parameters.Add("@DateBirth", MySqlDbType.Date).Value = animal.DateBirth;
+            MySqlCommand command = new MySqlCommand("AddAnimal", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@IdClient", animal.IdClient);
+            command.Parameters.AddWithValue("@IdSpecies", animal.IdSpecies);
+            command.Parameters.AddWithValue("@IdBreed", animal.IdBreed);
+            command.Parameters.AddWithValue("@Name", animal.Name);
+            command.Parameters.AddWithValue("@DateBirth", animal.DateBirth);
 
             db.openConnection();
 
@@ -115,20 +111,17 @@ namespace MyPetVet
 
             db.closeConnection();
         }
-
         public static void UpdateAnimal(Animal animal, int id)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand(@"UPDATE `vet_db`.`animal` 
-                                               SET `id_client` = @IdClient, `id_species` = @IdSpecies, `id_breed` = @IdBreed, 
-                                                   `name` = @Name, `date_birth` = @DateBirth 
-                                               WHERE `id_animal` = @ID", db.getConnection());
-            command.Parameters.Add("@IdClient", MySqlDbType.Int32).Value = animal.IdClient;
-            command.Parameters.Add("@IdSpecies", MySqlDbType.Int32).Value = animal.IdSpecies;
-            command.Parameters.Add("@IdBreed", MySqlDbType.Int32).Value = animal.IdBreed;
-            command.Parameters.Add("@Name", MySqlDbType.VarChar).Value = animal.Name;
-            command.Parameters.Add("@DateBirth", MySqlDbType.Date).Value = animal.DateBirth;
-            command.Parameters.Add("@ID", MySqlDbType.Int32).Value = id;
+            MySqlCommand command = new MySqlCommand("UpdateAnimal", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@ID", id);
+            command.Parameters.AddWithValue("@IdClient", animal.IdClient);
+            command.Parameters.AddWithValue("@IdSpecies", animal.IdSpecies);
+            command.Parameters.AddWithValue("@IdBreed", animal.IdBreed);
+            command.Parameters.AddWithValue("@Name", animal.Name);
+            command.Parameters.AddWithValue("@DateBirth", animal.DateBirth);
 
             db.openConnection();
 
@@ -139,12 +132,12 @@ namespace MyPetVet
 
             db.closeConnection();
         }
-
         public static void DeleteAnimal(int id)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("DELETE FROM `vet_db`.`animal` WHERE `id_animal` = @ID", db.getConnection());
-            command.Parameters.Add("@ID", MySqlDbType.Int32).Value = id;
+            MySqlCommand command = new MySqlCommand("DeleteAnimal", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@ID", id);
 
             db.openConnection();
 
@@ -155,7 +148,6 @@ namespace MyPetVet
 
             db.closeConnection();
         }
-
         public static void DisplayAndSearchAnimals(string query, DataGridView dgv)
         {
             DB db = new DB();
@@ -164,18 +156,173 @@ namespace MyPetVet
             DataTable table = new DataTable();
             adapter.Fill(table);
 
-            // Переконайтеся, що DataGridView не додає зайві колонки автоматично
             dgv.AutoGenerateColumns = false;
 
             dgv.DataSource = table;
 
-            // Вручну встановіть колонки відповідно до DataTable
             dgv.Columns["id_animal"].DataPropertyName = "id_animal";
             dgv.Columns["fullname"].DataPropertyName = "fullname";
             dgv.Columns["species"].DataPropertyName = "species";
             dgv.Columns["breed"].DataPropertyName = "breed";
             dgv.Columns["name"].DataPropertyName = "name";
             dgv.Columns["date_birth"].DataPropertyName = "date_birth";
+
+            db.closeConnection();
+        }
+        public static void AddLog(Log log)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("AddVisitLog", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@IdClient", log.IdClient);
+            command.Parameters.AddWithValue("@IdAnimal", log.IdAnimal);
+            command.Parameters.AddWithValue("@IdWorker", log.IdWorker);
+            command.Parameters.AddWithValue("@VisitDate", log.Date);
+            command.Parameters.AddWithValue("@VisitTime", log.Time);
+            command.Parameters.AddWithValue("@Symptoms", log.Symptoms);
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Запис додано.");
+            else
+                MessageBox.Show("Не вийшло додати новий запис. Перевірьте дані.");
+
+            db.closeConnection();
+        }
+        public static void UpdateLog(Log log, int id)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("UpdateVisitLog", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@VisitID", id);
+            command.Parameters.AddWithValue("@IdClient", log.IdClient);
+            command.Parameters.AddWithValue("@IdAnimal", log.IdAnimal);
+            command.Parameters.AddWithValue("@IdWorker", log.IdWorker);
+            command.Parameters.AddWithValue("@VisitDate", log.Date);
+            command.Parameters.AddWithValue("@VisitTime", log.Time);
+            command.Parameters.AddWithValue("@Symptoms", log.Symptoms);
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Дані про запис змінено.");
+            else
+                MessageBox.Show("Не вийшло змінити дані про запис. Перевірьте дані.");
+
+            db.closeConnection();
+        }
+        public static void DeleteLog(int id)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("DeleteVisitLog", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@VisitID", id);
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Запис було видалено.");
+            else
+                MessageBox.Show("Не вийшло видалити запис.");
+
+            db.closeConnection();
+        }
+        public static void DisplayAndSearchLog(string query, DataGridView dgv)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = table;
+
+            dgv.Columns["client"].DataPropertyName = "client";
+            dgv.Columns["animal"].DataPropertyName = "animal";
+            dgv.Columns["worker"].DataPropertyName = "worker";
+            dgv.Columns["date"].DataPropertyName = "date";
+            dgv.Columns["time"].DataPropertyName = "time";
+            dgv.Columns["symptoms"].DataPropertyName = "symptoms";
+
+            db.closeConnection();
+        }
+        public static void AddMedicalRecord(MedicalRecord record)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("AddMedicalRecord", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@IdAnimal", record.IdAnimal);
+            command.Parameters.AddWithValue("@IdWorker", record.IdWorker);
+            command.Parameters.AddWithValue("@RecordDate", record.Date);
+            command.Parameters.AddWithValue("@Description", record.Description);
+            command.Parameters.AddWithValue("@Diagnosis", record.Diagnosis);
+            command.Parameters.AddWithValue("@Recommendations", record.Recommendations);
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Медичний запис додано.");
+            else
+                MessageBox.Show("Не вдалося додати медичний запис. Перевірьте дані.");
+
+            db.closeConnection();
+        }
+        public static void UpdateMedicalRecord(MedicalRecord record, int id)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("UpdateMedicalRecord", db.getConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@RecordID", id);
+            command.Parameters.AddWithValue("@IdAnimal", record.IdAnimal);
+            command.Parameters.AddWithValue("@IdWorker", record.IdWorker);
+            command.Parameters.AddWithValue("@RecordDate", record.Date);
+            command.Parameters.AddWithValue("@Description", record.Description);
+            command.Parameters.AddWithValue("@Diagnosis", record.Diagnosis);
+            command.Parameters.AddWithValue("@Recommendations", record.Recommendations);
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Медичний запис оновлено.");
+            else
+                MessageBox.Show("Не вдалося оновити медичний запис. Перевірьте дані.");
+
+            db.closeConnection();
+        }
+        public static void DeleteMedicalRecord(int id)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand(@"DELETE FROM `vet_db`.`medical_record` WHERE `id_medrec` = @ID", db.getConnection());
+            command.Parameters.Add("@ID", MySqlDbType.Int32).Value = id;
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Медичний запис видалено.");
+            else
+                MessageBox.Show("Не вдалося видалити медичний запис. Перевірьте дані.");
+
+            db.closeConnection();
+        }
+        public static void DisplayAndSearchMedRecord(string query, DataGridView dgv)
+        {
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = table;
+            
+            dgv.Columns["animal"].DataPropertyName = "animal";
+            dgv.Columns["worker"].DataPropertyName = "worker";
+            dgv.Columns["date"].DataPropertyName = "date";
+            dgv.Columns["description"].DataPropertyName = "description";
+            dgv.Columns["diagnosis"].DataPropertyName = "diagnosis";
+            dgv.Columns["recommendations"].DataPropertyName = "recommendations";
 
             db.closeConnection();
         }

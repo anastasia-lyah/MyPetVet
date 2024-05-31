@@ -29,22 +29,18 @@ namespace MyPetVet
 
             this.ActiveControl = label1;
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String login = txtLogin.Text;
@@ -53,7 +49,7 @@ namespace MyPetVet
             DB db = new DB();
             DataTable table = new DataTable();
             MySqlDataAdapter adapret = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `workers` WHERE `login` = @l AND `password` = @p", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `worker` WHERE `login` = @l AND `password` = @p", db.getConnection());
             command.Parameters.Add("@l", MySqlDbType.VarChar).Value = login;
             command.Parameters.Add("@p", MySqlDbType.VarChar).Value = password;
 
@@ -68,18 +64,14 @@ namespace MyPetVet
             }              
             
             else
-                MessageBox.Show("Неправильний логін або пароль. Спробуйте знову.");
-
-            
+                MessageBox.Show("Неправильний логін або пароль. Спробуйте знову.");            
         }
-
         private void lblRegistr_Click(object sender, EventArgs e)
         {
             this.Hide();
             RegistrForm registrForm = new RegistrForm();
             registrForm.Show();
         }
-
         private void txtLogin_Enter(object sender, EventArgs e)
         {
             if (txtLogin.Text == "Логін")
@@ -88,7 +80,6 @@ namespace MyPetVet
                 txtLogin.ForeColor = Color.Black;
             }
         }
-
         private void txtLogin_Leave(object sender, EventArgs e)
         {
             if (txtLogin.Text == "")
@@ -97,7 +88,6 @@ namespace MyPetVet
                 txtLogin.ForeColor = Color.Gray;
             }
         }
-
         private void txtPass_Enter(object sender, EventArgs e)
         {
             if (txtPass.Text == "Пароль")
@@ -108,7 +98,6 @@ namespace MyPetVet
                 txtPass.UseSystemPasswordChar = true;
             }
         }
-
         private void txtPass_Leave(object sender, EventArgs e)
         {
             if (txtPass.Text == "")
@@ -119,17 +108,14 @@ namespace MyPetVet
                 txtPass.UseSystemPasswordChar = false;
             }
         }
-
         private void lblRegistr_MouseHover(object sender, EventArgs e)
         {
             
         }
-
         private void lblRegistr_MouseEnter(object sender, EventArgs e)
         {
             lblRegistr.ForeColor = Color.Brown;
         }
-
         private void lblRegistr_MouseLeave(object sender, EventArgs e)
         {
             lblRegistr.ForeColor = Color.Black;

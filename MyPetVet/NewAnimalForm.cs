@@ -50,8 +50,7 @@ namespace MyPetVet
             db.closeConnection();
         }
         public void UpdateInfo()
-        {
-            
+        {            
             btnSave.Text = "Оновити";
             lblText1.Text = "Редагувати дані про тварину";
             txtName.Text = name;
@@ -60,13 +59,11 @@ namespace MyPetVet
             cmbSpecies.SelectedValue = idSpecies;
             cmbBreed.SelectedValue = idBreed;
         }
-
         public void SaveInfo()
         {
             lblText1.Text = "Додати тварину";
             btnSave.Text = "Зберегти";
         }
-
         public void Clear()
         {
             txtName.Text = string.Empty;
@@ -75,22 +72,18 @@ namespace MyPetVet
             cmbSpecies.SelectedIndex = -1;
             cmbBreed.SelectedIndex = -1;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void NewAnimalForm_Load(object sender, EventArgs e)
         {
             ToolTip toolTip1 = new ToolTip();
@@ -98,7 +91,6 @@ namespace MyPetVet
             ToolTip toolTip2 = new ToolTip();
             toolTip1.SetToolTip(btnAddBreed, "Додати нову породу");
         }
-
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (txtName.Text.Trim().Length == 0)
@@ -141,21 +133,18 @@ namespace MyPetVet
             }
             _parent.Display();
         }
-
         private void btnAddBreed_Click(object sender, EventArgs e)
         {            
             BreedForm breedForm = new BreedForm();
             breedForm.ShowDialog();
             LoadBreeds();
         }
-
         private void btnAddSpecies_Click(object sender, EventArgs e)
         {            
             SpeciesForm speciesForm = new SpeciesForm();
             speciesForm.ShowDialog();
             LoadSpecies();
         }
-
         private void LoadClients()
         {
             DB db = new DB();
@@ -168,7 +157,6 @@ namespace MyPetVet
             cmbClient.ValueMember = "id_client";
             db.closeConnection();
         }
-
         private void LoadSpecies()
         {
             DB db = new DB();
@@ -181,7 +169,6 @@ namespace MyPetVet
             cmbSpecies.ValueMember = "id_species";
             db.closeConnection();
         }
-
         private void LoadBreeds()
         {
             DB db = new DB();

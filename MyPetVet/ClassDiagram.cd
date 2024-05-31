@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MyPetVet.Animal">
+    <Position X="3" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAQEAABAAAAAA=</HashCode>
+      <FileName>Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="5.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="MyPetVet.Log">
+    <Position X="3" Y="13.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACgAABAAAAAAAAAAAAAAAAAAAAAAAABAAAABAAAAQA=</HashCode>
+      <FileName>Log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyPetVet.Client">
+    <Position X="8" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyPetVet.DB">
+    <Position X="5" Y="10.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EQAAAAAAAAAAAAAAAAQDACAAACQQBABACAQHAAAgAAQ=</HashCode>
+      <FileName>DB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyPetVet.MedicalRecord">
+    <Position X="8" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AADgAAAAAAAgABAAAAAAAAAAAAAAAAABAAAAAAAAAQA=</HashCode>
+      <FileName>MedicalRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

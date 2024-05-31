@@ -26,36 +26,30 @@ namespace MyPetVet
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
             this.Hide();
             MenuForm menuForm = new MenuForm();
             menuForm.ShowDialog();
         }
-
         private void btnNewClient_Click(object sender, EventArgs e)
         {
             form.Clear();
             form.SaveInfo();
             form.ShowDialog();
         }
-
         private void ClientForm_Load(object sender, EventArgs e)
         {
 
         }
-
         private void ClientForm_Shown(object sender, EventArgs e)
         {
             Display();
         }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             DB.DisplayAndSearchClient("SELECT id_client, fullname, address, phone FROM client WHERE fullname LIKE '%"+ txtSearch.Text +"%'", dgvClients);
         }
-
         private void dgvClients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex == 0)

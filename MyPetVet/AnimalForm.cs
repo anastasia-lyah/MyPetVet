@@ -17,29 +17,25 @@ namespace MyPetVet
         {
             InitializeComponent();
             form = new NewAnimalForm(this);
-
-            // Видаліть зайві колонки, якщо вони вже додані
+            
             dgvAnimals.Columns.Clear();
-
-            // Додайте необхідні колонки
+            
             this.id_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_species = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_breed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
-            // Налаштовуємо ці колонки
+            
             this.id_client.HeaderText = "ID Client";
             this.id_client.Name = "id_client";
-            this.id_client.Visible = false; // Приховуємо колонку
+            this.id_client.Visible = false; 
 
             this.id_species.HeaderText = "ID Species";
             this.id_species.Name = "id_species";
-            this.id_species.Visible = false; // Приховуємо колонку
+            this.id_species.Visible = false;
 
             this.id_breed.HeaderText = "ID Breed";
             this.id_breed.Name = "id_breed";
-            this.id_breed.Visible = false; // Приховуємо колонку
-
-            // Додаємо ці колонки до DataGridView
+            this.id_breed.Visible = false; 
+           
             this.dgvAnimals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                 this.id_animal,
                 this.fullname,
@@ -54,7 +50,6 @@ namespace MyPetVet
                 this.id_breed
             });
         }
-
         public void Display()
         {
             DB.DisplayAndSearchAnimals(@"SELECT 
@@ -97,17 +92,14 @@ namespace MyPetVet
         {
             
         }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             
         }
-
         private void dgvAnimals_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
-
         private void dgvAnimals_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -136,7 +128,6 @@ namespace MyPetVet
                 }
             }
         }
-
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
             DB.DisplayAndSearchAnimals(@"SELECT 
@@ -156,17 +147,23 @@ namespace MyPetVet
                                         breeds b ON a.id_breed = b.id_breeds
                                      WHERE a.name LIKE '%" + txtSearch.Text + "%'", dgvAnimals);
         }
-
         private void lblBack2_Click(object sender, EventArgs e)
         {
             this.Hide();
             MenuForm menuForm = new MenuForm();
             menuForm.ShowDialog();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             
+
+        }
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

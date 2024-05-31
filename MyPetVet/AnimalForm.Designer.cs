@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnimalForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvAnimals = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnNewAnimal = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblBack2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.id_animal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.species = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,10 +44,18 @@
             this.id_client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_breed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_species = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnNewAnimal = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblBack2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -72,6 +72,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(930, 408);
             this.panel2.TabIndex = 12;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // dgvAnimals
             // 
@@ -112,6 +113,122 @@
             this.dgvAnimals.TabIndex = 0;
             this.dgvAnimals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimals_CellClick_1);
             // 
+            // id_animal
+            // 
+            this.id_animal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id_animal.DataPropertyName = "id_animal";
+            this.id_animal.FillWeight = 187.1657F;
+            this.id_animal.HeaderText = "id";
+            this.id_animal.MinimumWidth = 6;
+            this.id_animal.Name = "id_animal";
+            this.id_animal.ReadOnly = true;
+            this.id_animal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id_animal.Width = 50;
+            // 
+            // fullname
+            // 
+            this.fullname.DataPropertyName = "id_client";
+            this.fullname.FillWeight = 85.47237F;
+            this.fullname.HeaderText = "Власник";
+            this.fullname.MinimumWidth = 6;
+            this.fullname.Name = "fullname";
+            this.fullname.ReadOnly = true;
+            this.fullname.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // species
+            // 
+            this.species.DataPropertyName = "id_species";
+            this.species.FillWeight = 85.47237F;
+            this.species.HeaderText = "Вид";
+            this.species.MinimumWidth = 6;
+            this.species.Name = "species";
+            this.species.ReadOnly = true;
+            this.species.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // breed
+            // 
+            this.breed.DataPropertyName = "id_breed";
+            this.breed.FillWeight = 85.47237F;
+            this.breed.HeaderText = "Порода";
+            this.breed.MinimumWidth = 6;
+            this.breed.Name = "breed";
+            this.breed.ReadOnly = true;
+            this.breed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.FillWeight = 85.47237F;
+            this.name.HeaderText = "Ім\'я";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // date_birth
+            // 
+            this.date_birth.DataPropertyName = "date_birth";
+            this.date_birth.HeaderText = "Дата народження";
+            this.date_birth.MinimumWidth = 6;
+            this.date_birth.Name = "date_birth";
+            this.date_birth.ReadOnly = true;
+            // 
+            // update_animal
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(211)))), ((int)(((byte)(11)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(211)))), ((int)(((byte)(11)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.update_animal.DefaultCellStyle = dataGridViewCellStyle1;
+            this.update_animal.FillWeight = 85.47237F;
+            this.update_animal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update_animal.HeaderText = "";
+            this.update_animal.MinimumWidth = 6;
+            this.update_animal.Name = "update_animal";
+            this.update_animal.ReadOnly = true;
+            this.update_animal.Text = "Редагувати";
+            this.update_animal.UseColumnTextForButtonValue = true;
+            // 
+            // delete_animal
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Onest", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.OrangeRed;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.delete_animal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.delete_animal.FillWeight = 85.47237F;
+            this.delete_animal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_animal.HeaderText = "";
+            this.delete_animal.MinimumWidth = 6;
+            this.delete_animal.Name = "delete_animal";
+            this.delete_animal.ReadOnly = true;
+            this.delete_animal.Text = "Видалити";
+            this.delete_animal.UseColumnTextForButtonValue = true;
+            // 
+            // id_client
+            // 
+            this.id_client.HeaderText = "Column1";
+            this.id_client.MinimumWidth = 6;
+            this.id_client.Name = "id_client";
+            this.id_client.ReadOnly = true;
+            // 
+            // id_breed
+            // 
+            this.id_breed.HeaderText = "Column1";
+            this.id_breed.MinimumWidth = 6;
+            this.id_breed.Name = "id_breed";
+            this.id_breed.ReadOnly = true;
+            // 
+            // id_species
+            // 
+            this.id_species.HeaderText = "Column1";
+            this.id_species.MinimumWidth = 6;
+            this.id_species.Name = "id_species";
+            this.id_species.ReadOnly = true;
+            // 
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -122,22 +239,6 @@
             this.txtSearch.Size = new System.Drawing.Size(252, 29);
             this.txtSearch.TabIndex = 7;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(211)))), ((int)(((byte)(11)))));
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Location = new System.Drawing.Point(605, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnNewAnimal
             // 
@@ -215,122 +316,23 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Тварини";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // id_animal
+            // pictureBox1
             // 
-            this.id_animal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id_animal.DataPropertyName = "id_animal";
-            this.id_animal.FillWeight = 187.1657F;
-            this.id_animal.HeaderText = "id";
-            this.id_animal.MinimumWidth = 6;
-            this.id_animal.Name = "id_animal";
-            this.id_animal.ReadOnly = true;
-            this.id_animal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id_animal.Width = 50;
-            // 
-            // fullname
-            // 
-            this.fullname.DataPropertyName = "id_client";
-            this.fullname.FillWeight = 85.47237F;
-            this.fullname.HeaderText = "Власник";
-            this.fullname.MinimumWidth = 6;
-            this.fullname.Name = "fullname";
-            this.fullname.ReadOnly = true;
-            this.fullname.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // species
-            // 
-            this.species.DataPropertyName = "id_species";
-            this.species.FillWeight = 85.47237F;
-            this.species.HeaderText = "Вид";
-            this.species.MinimumWidth = 6;
-            this.species.Name = "species";
-            this.species.ReadOnly = true;
-            this.species.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // breed
-            // 
-            this.breed.DataPropertyName = "id_breed";
-            this.breed.FillWeight = 85.47237F;
-            this.breed.HeaderText = "Порода";
-            this.breed.MinimumWidth = 6;
-            this.breed.Name = "breed";
-            this.breed.ReadOnly = true;
-            this.breed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.FillWeight = 85.47237F;
-            this.name.HeaderText = "Ім\'я";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // date_birth
-            // 
-            this.date_birth.DataPropertyName = "date_birth";
-            this.date_birth.HeaderText = "Дата народження";
-            this.date_birth.MinimumWidth = 6;
-            this.date_birth.Name = "date_birth";
-            this.date_birth.ReadOnly = true;
-            // 
-            // update_animal
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(211)))), ((int)(((byte)(11)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(211)))), ((int)(((byte)(11)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.update_animal.DefaultCellStyle = dataGridViewCellStyle5;
-            this.update_animal.FillWeight = 85.47237F;
-            this.update_animal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.update_animal.HeaderText = "";
-            this.update_animal.MinimumWidth = 6;
-            this.update_animal.Name = "update_animal";
-            this.update_animal.ReadOnly = true;
-            this.update_animal.Text = "Редагувати";
-            this.update_animal.UseColumnTextForButtonValue = true;
-            // 
-            // delete_animal
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Onest", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.delete_animal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.delete_animal.FillWeight = 85.47237F;
-            this.delete_animal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_animal.HeaderText = "";
-            this.delete_animal.MinimumWidth = 6;
-            this.delete_animal.Name = "delete_animal";
-            this.delete_animal.ReadOnly = true;
-            this.delete_animal.Text = "Видалити";
-            this.delete_animal.UseColumnTextForButtonValue = true;
-            // 
-            // id_client
-            // 
-            this.id_client.HeaderText = "Column1";
-            this.id_client.MinimumWidth = 6;
-            this.id_client.Name = "id_client";
-            this.id_client.ReadOnly = true;
-            // 
-            // id_breed
-            // 
-            this.id_breed.HeaderText = "Column1";
-            this.id_breed.MinimumWidth = 6;
-            this.id_breed.Name = "id_breed";
-            this.id_breed.ReadOnly = true;
-            // 
-            // id_species
-            // 
-            this.id_species.HeaderText = "Column1";
-            this.id_species.MinimumWidth = 6;
-            this.id_species.Name = "id_species";
-            this.id_species.ReadOnly = true;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(211)))), ((int)(((byte)(11)))));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Location = new System.Drawing.Point(605, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // AnimalForm
             // 
@@ -346,13 +348,13 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AnimalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AnimalForm";
+            this.Text = "Тварини";
             this.Load += new System.EventHandler(this.AnimalForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimals)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
